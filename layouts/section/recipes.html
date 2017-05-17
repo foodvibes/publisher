@@ -1,0 +1,37 @@
+{{ partial "header" . }}
+<header>
+  <a class="home" href="/">Food Vibes</a>
+</header>
+
+<article class="recipes">
+  <h1>Recipes</h1>
+
+  <section class="categories">
+
+
+    <section class="meals">
+      {{ partial "categorical_recipe_list" (dict "context" .Site.Taxonomies.categories "category" "breakfast" ) }}
+      {{ partial "categorical_recipe_list" (dict "context" .Site.Taxonomies.categories "category" "lunch" ) }}
+      {{ partial "categorical_recipe_list" (dict "context" .Site.Taxonomies.categories "category" "dinner" ) }}
+    </section>
+
+    <section class="extras">
+      {{ partial "categorical_recipe_list" (dict "context" .Site.Taxonomies.categories "category" "sweets" ) }}
+      {{ partial "categorical_recipe_list" (dict "context" .Site.Taxonomies.categories "category" "fiddles" ) }}
+      {{ partial "categorical_recipe_list" (dict "context" .Site.Taxonomies.categories "category" "drinks" ) }}
+    </section>
+
+  </section>
+
+</article>
+
+<footer>
+  <menu class="sitemap">
+    <li><a href="/">Home</a></li>
+    <li><a href="https://kuokoa.life/products/food-vibes">Book</a></li>
+    <li><a href="https://github.com/foodvibes">Code</a></li>
+  </menu>
+  {{ partial "copyright" . }}
+</footer>
+
+{{ partial "footer" . }}

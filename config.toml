@@ -1,0 +1,7 @@
+baseURL = "http://foodvib.es/"
+languageCode = "en-US"
+title = "FOODVIB.ES"
+googleAnalytics = "UA-99123656-4"
+
+[taxonomies]
+category = "categories"

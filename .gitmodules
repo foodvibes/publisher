@@ -1,0 +1,6 @@
+[submodule "lib/normalize-scss"]
+	path = lib/normalize-scss
+	url = git@github.com:JohnAlbin/normalize-scss.git
+[submodule "public"]
+	path = public
+	url = git@github.com:foodvibes/foodvibes.github.io.git

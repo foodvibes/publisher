@@ -1,0 +1,148 @@
+@import "../../lib/normalize-scss/sass/normalize/import-now";
+@import "variables";
+@import "typography";
+
+html, body {
+  min-height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14pt;
+  line-height: 1.6;
+  color: $negative-alt;
+  background: black;
+  min-width: 25vh;
+  position: relative;
+  z-index: -2;
+}
+
+a {
+  color: $links;
+  transition: color .5s ease;
+  &:link {
+    color: $links;
+  }
+
+  &:visited, &.visited {
+    color: darken($links, 15%);
+  }
+
+  &:active, &:hover {
+    color: $links-active !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $negative;
+  font-family: "LunchBox", Helvetica, Arial, sans-serif;
+  text-transform: full-width;
+  font-kerning: normal;
+  font-weight: 500;
+}
+
+h2 {
+  margin: 1em 0;
+  padding: 0;
+  font-size: 32pt;
+  line-height: 32pt;
+}
+
+header {
+  background: rgba($ow, .9);
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+
+  a.home {
+      display: block;
+      width: 5em;
+      height: 0;
+      padding: 5em 0 0 0;
+      margin: 0 auto;
+      overflow: hidden;
+      background: url(/media/food-vibes-s-b.svg) no-repeat center center;
+      background-size: 3em;
+  }
+}
+
+footer {
+  color: $positive-alt;
+  text-align: center;
+  padding: 2vh;
+
+  &.home {
+    background: rgba($negative, .85);
+  }
+
+  a, a:link, a:visited, a:active {
+    text-decoration: none;
+    color: $positive-alt;
+  }
+
+  p {
+    background: url(/media/kuokoa-white-25.png) no-repeat center top;
+    background-size: 4em;
+    font-size: 8pt;
+    margin: 2vh 0;
+    padding: 5em 0 0;
+    color: rgba($w, .25);
+
+    a, a:link, a:visited, a:active {
+      color: rgba($positive-alt, .25);
+    }
+  }
+
+  menu {
+    list-style: none;
+    padding: 2vh 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    li {
+      display: block;
+      padding: 0;
+
+      &:nth-child(1n+2) {
+        border-left: 1px solid rgba($positive, .1);
+      }
+
+      a {
+        display: block;
+        padding: 0 1em;
+      }
+    }
+  }
+}
+
+article {
+  background: $w;
+
+  &.homepage {
+    background: transparent;
+  }
+}
+
+a.button {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 auto;
+  padding: .5em 1em;
+  border-radius: .5em;
+  background: rgba($links, .1);
+  color: $links;
+  transition: all ease .5s;
+
+  &:hover {
+    background: $links;
+    color: $w !important;
+  }
+}
+
+@import "homepage";
+@import "recipes";
