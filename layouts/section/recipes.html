@@ -1,13 +1,12 @@
-{{ partial "header" . }}
+{{ partial "head" . }}
+
 <header>
-  <a class="home" href="/">Food Vibes</a>
+  <a href="/"><h1>Food Vibes</h1></a>
 </header>
 
 <article class="recipes">
-  <h1>Recipes</h1>
 
   <section class="categories">
-
 
     <section class="meals">
       {{ range .Site.Params.meals }}
@@ -34,4 +33,4 @@
   {{ partial "copyright" . }}
 </footer>
 
-{{ partial "footer" . }}
+{{ partial "foot" . }}

@@ -8,7 +8,7 @@ article.recipes {
 
   h1 {
     margin: 0;
-    padding: 7rem 0 2rem;
+    padding: 2rem 0;
     line-height: 3rem;
     font-size: 2.5rem;
     text-align: center;
@@ -19,7 +19,7 @@ article.recipes {
 
   .categories {
     background: $positive;
-    min-width: 14em;
+    min-width: 14rem;
     margin: 0 auto;
     padding: 1rem 0 10vh 0;
     display: flex;
@@ -28,16 +28,15 @@ article.recipes {
     justify-content: center;
 
     .category {
-      width: 10em;
-      padding: 0 2em;
+      width: 10rem;
+      padding: 0 2rem 2rem;
       text-align: center;
 
       h2 {
-        margin-top: 2rem;
+        margin: 0;
         font-size: 2rem;
         // font-family: "Lunchbox-Light";
         text-transform: uppercase;
-        margin-bottom: 0;
       }
 
       ul {
@@ -58,12 +57,19 @@ article.recipe {
   p:first-child {
     margin: 0;
   }
-  img {
-    margin-top: 5em;
-    height: calc(75vh - 5em);
+
+  section.image {
+    height: calc(100vh - 20rem);
+    min-height: 50vw;
     width: 100%;
-    object-fit: cover;
-    background-color: black;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  img {
+    height: 0;
+    width: 0;
   }
 
   .recipe-card {
@@ -73,18 +79,17 @@ article.recipe {
     flex-direction: wrap;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 2em 10vh;
+    padding: 0 2rem 10vh;
 
     h1 {
       width: 30rem;
       margin: 2rem 0;
-      font-size: 2rem;
-      height: 2rem;
-      line-height: 2rem;
+      font-size: 2.2rem;
+      line-height: 3rem;
       span {
         height: 1.5rem;
         float: right;
-        margin: .25rem 0;
+        margin: .75rem 0;
       }
     }
 
@@ -116,7 +121,7 @@ article.recipe {
 
       yield {
         display: block;
-        margin-top: 1em;
+        margin-top: 1rem;
       }
     }
   }

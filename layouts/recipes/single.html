@@ -1,10 +1,15 @@
-{{ partial "header" . }}
+{{ partial "head" . }}
+
 <header>
-  <a class="home" href="/">Food Vibes</a>
+  <a href="/">Food Vibes</a>
 </header>
+
 <meta property="og:site_name" content="foodvib.es" />
 <article class="recipe h-recipe" itemscope itemtype="http://schema.org/Recipe">
-  <img itemprop="image" class="u-photo" src="/media/recipes/{{ index .Params.Categories 0 }}/{{ .Params.Slug }}.jpg" />
+
+  <section class="image" style="background-image:url(/media/recipes/{{ index .Params.Categories 0 }}/{{ .Params.Slug }}.jpg);">
+    <img itemprop="image" class="u-photo" src="/media/recipes/{{ index .Params.Categories 0 }}/{{ .Params.Slug }}.jpg" />
+  </section>
 
   <section class="recipe-card">
     <meta itemprop="url" content="{{ .Permalink }}" />
@@ -29,4 +34,4 @@
     src="//assets.pinterest.com/js/pinit.js"
 ></script>
 
-{{ partial "footer" . }}
+{{ partial "foot" . }}

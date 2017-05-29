@@ -502,9 +502,8 @@ article {
   background: #FFFFFF; }
 
 header {
-  background: rgba(255, 255, 255, 0.9);
-  position: fixed;
-  z-index: 10000;
+  background: #FFFFFF;
+  position: relative;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -512,15 +511,23 @@ header {
   flex-direction: row;
   align-content: center;
   align-items: center; }
-  header a.home {
+  header a {
     display: block;
-    width: 5em;
+    width: 100%;
     height: 0;
-    padding: 5em 0 0 0;
+    padding: 20vh 0 0 0;
     margin: 0 auto;
     overflow: hidden;
-    background: url(/media/food-vibes-s-b.svg) no-repeat center center;
-    background-size: 3em; }
+    background: transparent url(/media/food-vibes-s-b.svg) no-repeat center center;
+    background-size: 12vh;
+    transition: background-color .5s ease; }
+  header.home {
+    background: transparent;
+    position: fixed;
+    z-index: 10000; }
+    header.home a {
+      background-image: url(/media/food-vibes-s.svg);
+      cursor: default; }
 
 footer {
   color: gainsboro;
@@ -558,7 +565,8 @@ footer {
         padding: 0 1em; }
 
 article.homepage {
-  background: transparent; }
+  background: transparent;
+  padding-top: 100vh; }
   article.homepage:after {
     content: "";
     position: fixed;
@@ -581,16 +589,16 @@ article.homepage {
     background: transparent url(/media/food-vibes-s.svg) no-repeat center center;
     background-size: 50vh; }
   article.homepage > section {
-    background: #FFFFFF; }
-    article.homepage > section:nth-child(odd) {
+    background: #F5F5F5; }
+    article.homepage > section:nth-child(even) {
       background: rgba(0, 0, 0, 0.85);
       color: #F5F5F5; }
-      article.homepage > section:nth-child(odd) h2 {
+      article.homepage > section:nth-child(even) h2 {
         color: #FFFFFF; }
-      article.homepage > section:nth-child(odd) a {
+      article.homepage > section:nth-child(even) a {
         color: #128FB2; }
     article.homepage > section section {
-      max-width: 40em;
+      max-width: 46rem;
       padding: 4vh 2em;
       margin: 0 auto; }
       article.homepage > section section h2 {
@@ -605,7 +613,8 @@ article.homepage {
           background-size: 4em;
           padding: 3em 0 0 0; }
       article.homepage > section section p {
-        text-align: center; }
+        text-align: center;
+        text-align-last: center; }
 
 article.recipes {
   background: transparent; }
@@ -626,7 +635,7 @@ article.recipes {
     text-decoration: none; }
   article.recipes h1 {
     margin: 0;
-    padding: 7rem 0 2rem;
+    padding: 2rem 0;
     line-height: 3rem;
     font-size: 2.5rem;
     text-align: center;
@@ -635,7 +644,7 @@ article.recipes {
     color: #FFFFFF; }
   article.recipes .categories {
     background: #FFFFFF;
-    min-width: 14em;
+    min-width: 14rem;
     margin: 0 auto;
     padding: 1rem 0 10vh 0;
     display: flex;
@@ -643,14 +652,13 @@ article.recipes {
     flex-wrap: wrap;
     justify-content: center; }
     article.recipes .categories .category {
-      width: 10em;
-      padding: 0 2em;
+      width: 10rem;
+      padding: 0 2rem 2rem;
       text-align: center; }
       article.recipes .categories .category h2 {
-        margin-top: 2rem;
+        margin: 0;
         font-size: 2rem;
-        text-transform: uppercase;
-        margin-bottom: 0; }
+        text-transform: uppercase; }
       article.recipes .categories .category ul {
         list-style: none;
         margin: 0;
@@ -661,12 +669,17 @@ article.recipes {
 article.recipe p:first-child {
   margin: 0; }
 
-article.recipe img {
-  margin-top: 5em;
-  height: calc(75vh - 5em);
+article.recipe section.image {
+  height: calc(100vh - 20rem);
+  min-height: 50vw;
   width: 100%;
-  object-fit: cover;
-  background-color: black; }
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center; }
+
+article.recipe img {
+  height: 0;
+  width: 0; }
 
 article.recipe .recipe-card {
   margin: 0 auto;
@@ -675,17 +688,16 @@ article.recipe .recipe-card {
   flex-direction: wrap;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 2em 10vh; }
+  padding: 0 2rem 10vh; }
   article.recipe .recipe-card h1 {
     width: 30rem;
     margin: 2rem 0;
-    font-size: 2rem;
-    height: 2rem;
-    line-height: 2rem; }
+    font-size: 2.2rem;
+    line-height: 3rem; }
     article.recipe .recipe-card h1 span {
       height: 1.5rem;
       float: right;
-      margin: .25rem 0; }
+      margin: .75rem 0; }
   article.recipe .recipe-card directions {
     width: 30rem;
     display: block;
@@ -703,7 +715,7 @@ article.recipe .recipe-card {
       display: block; }
     article.recipe .recipe-card ingredients yield {
       display: block;
-      margin-top: 1em; }
+      margin-top: 1rem; }
 
 @media print {
   header, footer {
