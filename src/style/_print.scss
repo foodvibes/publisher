@@ -1,0 +1,29 @@
+@media print {
+  header, footer {
+    display: none !important;
+  }
+  * {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif !important;
+    width: auto !important;
+    font-size: 10pt !important;
+    background: white !important;
+    color: black !important;
+  }
+  img {
+    display: none;
+  }
+
+  h1 {
+    font-size: 14pt !important;
+  }
+
+  ingredients {
+    &:before {
+      content: 'Ingredients:';
+      font-weight: bold;
+    }
+  }
+  yield {
+    display: none !important;
+  }
+}

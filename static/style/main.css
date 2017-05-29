@@ -447,6 +447,8 @@ template {
 html, body {
   min-height: 100%;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
   font-weight: 500;
   font-size: 14pt;
   line-height: 1.6;
@@ -465,6 +467,23 @@ a {
     color: #0b576d; }
   a:active, a:hover {
     color: #17CFE5 !important; }
+  a.button {
+    font-family: "Lunchbox";
+    font-size: 1.8rem;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1rem auto;
+    padding: .25rem 1.5rem;
+    border-radius: 1rem;
+    background: #128FB2;
+    color: #FFFFFF !important;
+    box-shadow: 0 0.25rem 0 rgba(0, 0, 0, 0.1);
+    transition: all .25s ease;
+    top: 0;
+    position: relative; }
+    a.button:hover {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+      top: .25rem; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #000000;
@@ -479,9 +498,13 @@ h2 {
   font-size: 32pt;
   line-height: 32pt; }
 
+article {
+  background: #FFFFFF; }
+
 header {
-  background: rgba(245, 245, 245, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   position: fixed;
+  z-index: 10000;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -502,8 +525,9 @@ header {
 footer {
   color: gainsboro;
   text-align: center;
-  padding: 2vh; }
-  footer.home {
+  padding: 2vh;
+  font-size: 12pt; }
+  footer.fixed-cover {
     background: rgba(0, 0, 0, 0.85); }
   footer a, footer a:link, footer a:visited, footer a:active {
     text-decoration: none;
@@ -533,98 +557,169 @@ footer {
         display: block;
         padding: 0 1em; }
 
-article {
-  background: #FFFFFF; }
-  article.homepage {
-    background: transparent; }
-
-a.button {
-  text-decoration: none;
-  display: inline-block;
-  margin: 0 auto;
-  padding: .5em 1em;
-  border-radius: .5em;
-  background: rgba(18, 143, 178, 0.1);
-  color: #128FB2;
-  transition: all ease .5s; }
-  a.button:hover {
-    background: #128FB2;
-    color: #FFFFFF !important; }
-
-article.homepage:after {
-  content: "";
-  position: fixed;
-  /* stretch a fixed position to the whole screen */
-  top: 0;
-  height: 100vh;
-  /* fix for mobile browser address bar appearing disappearing */
-  left: 0;
-  right: 0;
-  z-index: -1;
-  /* needed to keep in the background */
-  background: url(/media/C5E00AD9-164F-437F-ADB4-E0249F75621B.jpg) center center;
-  background-size: cover; }
-
-article.homepage h1 {
-  width: 100%;
-  height: 0;
-  margin: 0;
-  padding: 50vh 0 0 0;
-  overflow: hidden;
-  background: transparent url(/media/food-vibes-s.svg) no-repeat center center;
-  background-size: 2000px;
-  background-size: 34vh; }
-
-article.homepage > section {
-  background: #FFFFFF; }
-  article.homepage > section:nth-child(odd) {
-    background-color: #F5F5F5; }
-  article.homepage > section section {
-    max-width: 40em;
-    padding: 4vh 2em;
-    margin: 0 auto; }
-    article.homepage > section section h2 {
-      text-align: center; }
-      article.homepage > section section h2.booze-and-blade {
-        background: url(/media/booze-and-blade.svg) no-repeat center top;
-        background-size: 4em;
-        padding: 3em 0 0 0; }
-      article.homepage > section section h2.book {
-        background: url(/media/book.svg) no-repeat center top;
-        background-size: 4em;
-        padding: 3em 0 0 0; }
-      article.homepage > section section h2.fork {
-        background: url(/media/fork.svg) no-repeat center top;
-        background-size: 4em;
-        padding: 3em 0 0 0; }
-    article.homepage > section section p {
-      text-align: center; }
+article.homepage {
+  background: transparent; }
+  article.homepage:after {
+    content: "";
+    position: fixed;
+    /* stretch a fixed position to the whole screen */
+    top: 0;
+    height: 100vh;
+    /* fix for mobile browser address bar appearing disappearing */
+    left: 0;
+    right: 0;
+    z-index: -1;
+    /* needed to keep in the background */
+    background: url(/media/C5E00AD9-164F-437F-ADB4-E0249F75621B.jpg) center center;
+    background-size: cover; }
+  article.homepage h1 {
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 100vh 0 0 0;
+    overflow: hidden;
+    background: transparent url(/media/food-vibes-s.svg) no-repeat center center;
+    background-size: 50vh; }
+  article.homepage > section {
+    background: #FFFFFF; }
+    article.homepage > section:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.85);
+      color: #F5F5F5; }
+      article.homepage > section:nth-child(odd) h2 {
+        color: #FFFFFF; }
+      article.homepage > section:nth-child(odd) a {
+        color: #128FB2; }
+    article.homepage > section section {
+      max-width: 40em;
+      padding: 4vh 2em;
+      margin: 0 auto; }
+      article.homepage > section section h2 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        text-align: center;
+        text-transform: uppercase; }
+        article.homepage > section section h2 span {
+          white-space: nowrap; }
+        article.homepage > section section h2.fork {
+          background: url(/media/fork.svg) no-repeat center top;
+          background-size: 4em;
+          padding: 3em 0 0 0; }
+      article.homepage > section section p {
+        text-align: center; }
 
 article.recipes {
-  padding: 6em 2em 10vh; }
+  background: transparent; }
+  article.recipes:after {
+    content: "";
+    position: fixed;
+    /* stretch a fixed position to the whole screen */
+    top: 0;
+    height: 100vh;
+    /* fix for mobile browser address bar appearing disappearing */
+    left: 0;
+    right: 0;
+    z-index: -1;
+    /* needed to keep in the background */
+    background: url(/media/C5E00AD9-164F-437F-ADB4-E0249F75621B.jpg) center center;
+    background-size: cover; }
   article.recipes a {
     text-decoration: none; }
   article.recipes h1 {
-    font-size: 36pt;
-    text-align: center; }
+    margin: 0;
+    padding: 7rem 0 2rem;
+    line-height: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.85);
+    color: #FFFFFF; }
   article.recipes .categories {
-    min-width: 16em;
+    background: #FFFFFF;
+    min-width: 14em;
     margin: 0 auto;
+    padding: 1rem 0 10vh 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center; }
     article.recipes .categories .category {
-      width: 16em;
+      width: 10em;
+      padding: 0 2em;
       text-align: center; }
       article.recipes .categories .category h2 {
-        font-size: 24pt;
-        text-transform: capitalize;
+        margin-top: 2rem;
+        font-size: 2rem;
+        text-transform: uppercase;
         margin-bottom: 0; }
       article.recipes .categories .category ul {
         list-style: none;
         margin: 0;
         padding: 0; }
         article.recipes .categories .category ul li {
-          padding: 0;
-          line-height: 2em; }
+          padding: 0; }
+
+article.recipe p:first-child {
+  margin: 0; }
+
+article.recipe img {
+  margin-top: 5em;
+  height: calc(75vh - 5em);
+  width: 100%;
+  object-fit: cover;
+  background-color: black; }
+
+article.recipe .recipe-card {
+  margin: 0 auto;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 2em 10vh; }
+  article.recipe .recipe-card h1 {
+    width: 30rem;
+    margin: 2rem 0;
+    font-size: 2rem;
+    height: 2rem;
+    line-height: 2rem; }
+    article.recipe .recipe-card h1 span {
+      height: 1.5rem;
+      float: right;
+      margin: .25rem 0; }
+  article.recipe .recipe-card directions {
+    width: 30rem;
+    display: block;
+    text-align: justify; }
+    article.recipe .recipe-card directions p:first-child {
+      margin-top: 0; }
+  article.recipe .recipe-card ingredients {
+    display: block;
+    width: 18rem;
+    font-size: 12pt;
+    display: flex;
+    flex-direction: column;
+    color: rgba(87, 87, 87, 0.75); }
+    article.recipe .recipe-card ingredients ing {
+      display: block; }
+    article.recipe .recipe-card ingredients yield {
+      display: block;
+      margin-top: 1em; }
+
+@media print {
+  header, footer {
+    display: none !important; }
+  * {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif !important;
+    width: auto !important;
+    font-size: 10pt !important;
+    background: white !important;
+    color: black !important; }
+  img {
+    display: none; }
+  h1 {
+    font-size: 14pt !important; }
+  ingredients:before {
+    content: 'Ingredients:';
+    font-weight: bold; }
+  yield {
+    display: none !important; } }

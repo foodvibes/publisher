@@ -4,3 +4,9 @@
 [submodule "public"]
 	path = public
 	url = git@github.com:foodvibes/foodvibes.github.io.git
+[submodule "recipes"]
+	path = recipes
+	url = git@github.com:foodvibes/recipes.git
+[submodule "transcoder"]
+	path = transcoder
+	url = git@github.com:foodvibes/transcoder.git

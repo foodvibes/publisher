@@ -1,39 +1,30 @@
 article.homepage {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // background: url(/media/C5E00AD9-164F-437F-ADB4-E0249F75621B.jpg) no-repeat center center;
-  // background-size: cover;
-  // background-attachment: scroll;
-
-  &:after{
-      content: "";
-      position: fixed; /* stretch a fixed position to the whole screen */
-      top: 0;
-      height: 100vh; /* fix for mobile browser address bar appearing disappearing */
-      left: 0;
-      right: 0;
-      z-index: -1; /* needed to keep in the background */
-      background: url(/media/C5E00AD9-164F-437F-ADB4-E0249F75621B.jpg) center center;
-      background-size: cover;
-}
+  @include fixed-cover;
 
   h1 {
     width: 100%;
     height: 0;
     margin: 0;
-    padding: 50vh 0 0 0;
+    padding: 100vh 0 0 0;
     overflow: hidden;
     background: transparent url(/media/food-vibes-s.svg) no-repeat center center;
-    background-size: 2000px;
-    background-size: 34vh;
+    background-size: 50vh;
   }
 
   & > section {
     background: $positive;
 
     &:nth-child(odd) {
-      background-color: $ow;
+      background: rgba($negative, .85);
+      color: $ow;
+
+      h2 {
+        color: $w;
+      }
+
+      a {
+        color: $links;
+      }
     }
 
     section {
@@ -42,19 +33,26 @@ article.homepage {
       margin: 0 auto;
 
       h2 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
         text-align: center;
+        text-transform: uppercase;
 
-        &.booze-and-blade {
-          background: url(/media/booze-and-blade.svg) no-repeat center top;
-          background-size: 4em;
-          padding: 3em 0 0 0;
+        span {
+          white-space: nowrap;
         }
 
-        &.book {
-          background: url(/media/book.svg) no-repeat center top;
-          background-size: 4em;
-          padding: 3em 0 0 0;
-        }
+        // &.booze-and-blade {
+        //   background: url(/media/foods.svg) no-repeat center top;
+        //   background-size: 4em;
+        //   padding: 3em 0 0 0;
+        // }
+
+        // &.book {
+        //   background: url(/media/book.svg) no-repeat center top;
+        //   background-size: 4em;
+        //   padding: 3em 0 0 0;
+        // }
 
         &.fork {
           background: url(/media/fork.svg) no-repeat center top;

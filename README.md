@@ -1,6 +1,10 @@
 # Recipe Blog Generator
 
-A static site generator for [foodvib.es](http://foodvib.es)
+A static site generator for [foodvib.es](http://foodvib.es).
+
+This composition tool:
+- Consumes plaintext recipes and encodes in markdown format, organizing into a predefined set of folders.
+-
 
 ## Dependencies:
 

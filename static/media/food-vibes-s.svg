@@ -4,7 +4,7 @@
     <title>Untitled 6</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <filter x="-50%" y="-50%" width="200%" height="200%" filterRes="1500" filterUnits="objectBoundingBox" id="filter-1">
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterRes="2500" filterUnits="objectBoundingBox" id="filter-1">
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
