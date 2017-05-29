@@ -61,13 +61,11 @@ function animateHeader() {
   var delta = height - position;
   if (delta <= minimum) {
     link.style.paddingTop = minimum + 'px';
-    link.style.backgroundSize = minimum * backgroundSizeRatio + 'px';
     link.style.backgroundColor = 'rgba(255,255,255,1)';
     link.style.backgroundImage = 'url(/media/food-vibes-s-b.svg)';
   } else {
     //console.log(height - position);
     link.style.paddingTop = delta + 'px';
-    link.style.backgroundSize = (delta * backgroundSizeRatio) + 'px';
     link.style.backgroundColor = 'rgba(255,255,255,0)';
     link.style.backgroundImage = 'url(/media/food-vibes.svg)';
   }
@@ -79,6 +77,20 @@ function init() {
   link = header.children[0];
   window.setTimeout(animateHeader, 1);
   window.addEventListener('scroll', animateHeader);
+
+  var b = false;
+  var aside = document.createElement('aside');
+  aside.className = 'logo';
+  var aside = header.appendChild(aside)
+  for (var i = 0; i < 6; i++) {
+    window.setTimeout(function() {
+      var e = document.createElement('div');
+      e.className = 'image';
+      e.style.backgroundImage = 'url(/media/food-vibes.svg)';
+      aside.appendChild(e);
+    }, 250 * i);
+  }
+
 }
 
 window.onload = init;

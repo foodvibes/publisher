@@ -1,3 +1,34 @@
+aside.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .image {
+    position: absolute;
+    background: transparent url(/media/food-vibes.svg) center center no-repeat;
+    background-size: auto 60vh;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    animation: 3s vibration;
+  }
+}
+
+@keyframes vibration {
+  from {
+    opacity: 0;
+    background-size: auto 1px;
+  }
+
+  to {
+    opacity: .5;
+    background-size: auto 60%;
+  }
+}
+
 article.homepage {
   @include fixed-cover;
 
@@ -10,7 +41,7 @@ article.homepage {
     padding: 100vh 0 0 0;
     overflow: hidden;
     background: transparent url(/media/food-vibes-s.svg) no-repeat center center;
-    background-size: 50vh;
+    background-size: auto 60%;
   }
 
   & > section {
