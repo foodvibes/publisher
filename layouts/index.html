@@ -76,13 +76,14 @@ function init() {
   header = document.getElementsByTagName('header')[0];
   link = header.children[0];
   window.setTimeout(animateHeader, 1);
+  window.addEventListener('resize', animateHeader);
   window.addEventListener('scroll', animateHeader);
 
   var b = false;
   var aside = document.createElement('aside');
   aside.className = 'logo';
   var aside = header.appendChild(aside)
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < 8; i++) {
     window.setTimeout(function() {
       var e = document.createElement('div');
       e.className = 'image';
