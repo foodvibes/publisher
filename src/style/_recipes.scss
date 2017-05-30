@@ -60,9 +60,11 @@ article.recipe {
 
   section.image {
     height: calc(100vh - 20rem);
-    min-height: 50vw;
+    min-height: 50vh;
+    max-height: 70vh;
     width: 100%;
     overflow: hidden;
+    background-color: $ow;
     background-size: cover;
     background-position: center center;
   }
@@ -81,7 +83,7 @@ article.recipe {
     justify-content: space-between;
     padding: 0 2rem 10vh;
 
-    h1 {
+    h2 {
       width: 30rem;
       margin: 2rem 0;
       font-size: 2.2rem;
@@ -97,6 +99,7 @@ article.recipe {
       width: 30rem;
       display: block;
       text-align: justify;
+      color: $negative;
 
       p:first-child {
         margin-top: 0;
@@ -105,11 +108,11 @@ article.recipe {
 
     ingredients {
       display: block;
-      width: 18rem;
+      width: 17rem;
       font-size: 12pt;
       display: flex;
       flex-direction: column;
-      color: rgba($negative-alt, .75);
+      color: $negative-alt;
       // color: $negative-alt;
       // background: $ow;
       // padding: 1.6em 2em;

@@ -4,11 +4,11 @@
   <a href="/"><h1>Food Vibes</h1></a>
 </header>
 
-<article class="homepage">
+<article id="content" class="homepage">
 
   <section>
     <section>
-      <h2 class="booze-and-blade"><span>Good Food</span> &amp; <span>Strong Drink</span></h2>
+      <h2><span>Good Food</span> &amp; <span>Strong Drink</span></h2>
       <p><a href="http://foodvib.es">foodvib.es</a> is a refreshingly terse catalogue of simple, familiar recipes. Many were originally shared by someone only to be lost in time and translation; others found in literature only to be unapologetically butchered beyond recognition. It always begins with good intentions and genuine inspiration.</p>
       <p>What you will find here are the eventual serendipitous discoveries born of poor memory, tidal laziness, limited resources and gastrally induced desperation paired with a palate tolerable of failure and relentless will to cook.</p>
       <p><a class="button" href="/recipes">MAKE THE RECIPES</a></p>
@@ -16,7 +16,7 @@
   </section>
   <section>
     <section>
-      <h2 class="book"><span>West Coast</span> + <span>Island Style</span> Cookbook</h2>
+      <h2><span>West Coast</span> + <span>Island Style</span> Cookbook</h2>
       <p>The <a href="https://kuokoa.life/products/food-vibes">book</a> is a beautiful physical manifestation of the <a href="/recipes">recipes</a> shared here. A mashup of fresh flavors and casual culinary style native to west coast and island lifestyles. Everything contained has been crafted between California and Hawaiʻi over the last decade. Each recipe inspired by spontaneous happenings, ritual gatherings, casual  dining, backyard barbecues, bonfires at the beach and campfires under the stars with friends, family and amicable strangers.</p>
       <p><a class="button" href="https://kuokoa.life/products/food-vibes">GET THE BOOK</a></p>
     </section>
@@ -28,7 +28,7 @@
       <p><a class="button" href="https://github.com/foodvibes">HACK THE CODE</a></p>
     </section>
   </section>
-
+  <aside class="after"></aside>
 </article>
 
 <footer class="fixed-cover">
@@ -42,7 +42,7 @@
 
 <script>
 var backgroundSizeRatio = .6,
-    minimumHeaderHeight = '12vh',
+    minimumHeaderHeight = '4rem',
     minimum, header, link;
 
 
@@ -58,15 +58,20 @@ function calculateMinimumHeight() {
 function animateHeader() {
   var position = window.pageYOffset || document.documentElement.scrollTop;
   var height = window.innerHeight || document.documentElement.clientHeight;
+  var length = document.body.clientHeight;
   var delta = height - position;
+
+  var offset = position / (length - height);
+  bg.style.top = (offset * -20) + '%';
+
   if (delta <= minimum) {
-    link.style.paddingTop = minimum + 'px';
-    link.style.backgroundColor = 'rgba(255,255,255,1)';
+    header.style.height = minimum + 'px';
+    header.style.backgroundColor = 'rgba(255,255,255,1)';
     link.style.backgroundImage = 'url(/media/food-vibes-s-b.svg)';
   } else {
     //console.log(height - position);
-    link.style.paddingTop = delta + 'px';
-    link.style.backgroundColor = 'rgba(255,255,255,0)';
+    header.style.height = delta + 'px';
+    header.style.backgroundColor = 'rgba(255,255,255,0)';
     link.style.backgroundImage = 'url(/media/food-vibes.svg)';
   }
 }
@@ -75,22 +80,11 @@ function init() {
   minimum = calculateMinimumHeight();
   header = document.getElementsByTagName('header')[0];
   link = header.children[0];
+  bg = document.querySelector('aside.after');
+
   window.setTimeout(animateHeader, 1);
   window.addEventListener('resize', animateHeader);
   window.addEventListener('scroll', animateHeader);
-
-  var b = false;
-  var aside = document.createElement('aside');
-  aside.className = 'logo';
-  var aside = header.appendChild(aside)
-  for (var i = 0; i < 8; i++) {
-    window.setTimeout(function() {
-      var e = document.createElement('div');
-      e.className = 'image';
-      e.style.backgroundImage = 'url(/media/food-vibes.svg)';
-      aside.appendChild(e);
-    }, 250 * i);
-  }
 
 }
 

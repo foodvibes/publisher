@@ -8,17 +8,22 @@ header {
   flex-direction: row;
   align-content: center;
   align-items: center;
+  height: 8rem;
 
   a {
       display: block;
       width: 100%;
-      height: 0;
-      padding: 20vh 0 0 0;
-      margin: 0 auto;
+      min-height: 60%;
+      margin: 20%;
+      padding: 0;
       overflow: hidden;
       background: transparent url(/media/food-vibes-s-b.svg) no-repeat center center;
-      background-size: auto 60%;
+      background-size: contain;
       transition: background-color .5s ease;
+
+      h1 {
+        display: none;
+      }
   }
 
   &.home {
@@ -28,7 +33,7 @@ header {
 
     a {
       background-image: url(/media/food-vibes-s.svg);
-      cursor: default;
+      cursor: s-resize;
     }
   }
 }

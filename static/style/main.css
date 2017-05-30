@@ -506,24 +506,27 @@ header {
   display: flex;
   flex-direction: row;
   align-content: center;
-  align-items: center; }
+  align-items: center;
+  height: 8rem; }
   header a {
     display: block;
     width: 100%;
-    height: 0;
-    padding: 20vh 0 0 0;
-    margin: 0 auto;
+    min-height: 60%;
+    margin: 20%;
+    padding: 0;
     overflow: hidden;
     background: transparent url(/media/food-vibes-s-b.svg) no-repeat center center;
-    background-size: auto 60%;
+    background-size: contain;
     transition: background-color .5s ease; }
+    header a h1 {
+      display: none; }
   header.home {
     background: transparent;
     position: fixed;
     z-index: 10000; }
     header.home a {
       background-image: url(/media/food-vibes-s.svg);
-      cursor: default; }
+      cursor: s-resize; }
 
 footer {
   color: gainsboro;
@@ -560,39 +563,14 @@ footer {
         display: block;
         padding: 0 1em; }
 
-aside.logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; }
-  aside.logo .image {
-    position: absolute;
-    background: transparent url(/media/food-vibes.svg) center center no-repeat;
-    background-size: auto 60%;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    animation: 3s vibration; }
-
-@keyframes vibration {
-  from {
-    opacity: 0;
-    background-size: auto 40%; }
-  to {
-    opacity: .25;
-    background-size: auto 60%; } }
-
 article.homepage {
   background: transparent;
   padding-top: 100vh; }
-  article.homepage:after {
-    content: "";
+  article.homepage .after {
     position: fixed;
     /* stretch a fixed position to the whole screen */
-    top: 0;
-    height: 100vh;
+    top: -20%;
+    height: 120%;
     /* fix for mobile browser address bar appearing disappearing */
     left: 0;
     right: 0;
@@ -600,14 +578,6 @@ article.homepage {
     /* needed to keep in the background */
     background: url(/media/C5E00AD9-164F-437F-ADB4-E0249F75621B.jpg) center center;
     background-size: cover; }
-  article.homepage h1 {
-    width: 100%;
-    height: 0;
-    margin: 0;
-    padding: 100vh 0 0 0;
-    overflow: hidden;
-    background: transparent url(/media/food-vibes-s.svg) no-repeat center center;
-    background-size: auto 60%; }
   article.homepage > section {
     background: #F5F5F5; }
     article.homepage > section:nth-child(even) {
@@ -638,12 +608,11 @@ article.homepage {
 
 article.recipes {
   background: transparent; }
-  article.recipes:after {
-    content: "";
+  article.recipes .after {
     position: fixed;
     /* stretch a fixed position to the whole screen */
-    top: 0;
-    height: 100vh;
+    top: -20%;
+    height: 120%;
     /* fix for mobile browser address bar appearing disappearing */
     left: 0;
     right: 0;
@@ -691,9 +660,11 @@ article.recipe p:first-child {
 
 article.recipe section.image {
   height: calc(100vh - 20rem);
-  min-height: 50vw;
+  min-height: 50vh;
+  max-height: 70vh;
   width: 100%;
   overflow: hidden;
+  background-color: #F5F5F5;
   background-size: cover;
   background-position: center center; }
 
@@ -709,28 +680,29 @@ article.recipe .recipe-card {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 2rem 10vh; }
-  article.recipe .recipe-card h1 {
+  article.recipe .recipe-card h2 {
     width: 30rem;
     margin: 2rem 0;
     font-size: 2.2rem;
     line-height: 3rem; }
-    article.recipe .recipe-card h1 span {
+    article.recipe .recipe-card h2 span {
       height: 1.5rem;
       float: right;
       margin: .75rem 0; }
   article.recipe .recipe-card directions {
     width: 30rem;
     display: block;
-    text-align: justify; }
+    text-align: justify;
+    color: #000000; }
     article.recipe .recipe-card directions p:first-child {
       margin-top: 0; }
   article.recipe .recipe-card ingredients {
     display: block;
-    width: 18rem;
+    width: 17rem;
     font-size: 12pt;
     display: flex;
     flex-direction: column;
-    color: rgba(87, 87, 87, 0.75); }
+    color: #575757; }
     article.recipe .recipe-card ingredients ing {
       display: block; }
     article.recipe .recipe-card ingredients yield {
@@ -740,18 +712,33 @@ article.recipe .recipe-card {
 @media print {
   header, footer {
     display: none !important; }
-  * {
+  html, body, * {
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif !important;
     width: auto !important;
     font-size: 10pt !important;
-    background: white !important;
+    background: white;
     color: black !important; }
   img {
     display: none; }
-  h1 {
-    font-size: 14pt !important; }
-  ingredients:before {
-    content: 'Ingredients:';
-    font-weight: bold; }
-  yield {
-    display: none !important; } }
+  h2 {
+    font-size: 14pt !important;
+    line-height: 18pt !important;
+    margin: 2rem 0 1rem !important; }
+    h2 span {
+      display: none !important; }
+  section.image {
+    min-height: auto !important;
+    height: auto !important;
+    width: auto !important;
+    background: none !important; }
+    section.image img {
+      width: 40rem !important;
+      height: auto;
+      display: block !important; }
+  .recipe-card {
+    margin: 0 !important;
+    max-width: auto !important;
+    padding: 0 !important; }
+    .recipe-card ingredients:before {
+      content: 'Ingredients:';
+      font-weight: bold; } }

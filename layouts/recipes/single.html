@@ -1,7 +1,7 @@
 {{ partial "head" . }}
 
 <header>
-  <a href="/">Food Vibes</a>
+  <a href="/"><h1>Food Vibes</h1></a>
 </header>
 
 <meta property="og:site_name" content="foodvib.es" />
@@ -13,7 +13,7 @@
 
   <section class="recipe-card">
     <meta itemprop="url" content="{{ .Permalink }}" />
-    <h1 class="p-name" itemprop="name">{{ .Title }} <a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/" data-pin-tall="true"></a></h1>
+    <h2 class="p-name" itemprop="name">{{ .Title }} <a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/" data-pin-tall="true"></a></h2>
     {{ chomp .Content }}
   </section>
 </article>
