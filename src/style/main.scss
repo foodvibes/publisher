@@ -11,7 +11,7 @@ html, body {
   font-weight: 500;
   font-size: 14pt;
   line-height: 1.6;
-  color: $negative-alt;
+  color: $b;
   background: black;
   min-width: 25vh;
   position: relative;
@@ -56,7 +56,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $negative;
+  color: $b;
   font-family: "LunchBox", Helvetica, Arial, sans-serif;
   text-transform: full-width;
   font-kerning: normal;

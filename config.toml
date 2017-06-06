@@ -1,6 +1,6 @@
 baseURL = "http://foodvib.es/"
 languageCode = "en-US"
-title = "foodvib.es"
+title = "FOOD VIBES"
 googleAnalytics = "UA-99123656-4"
 
 [taxonomies]
@@ -8,4 +8,4 @@ category = "categories"
 
 [params]
 meals = ["breakfast","lunch","dinner"]
-extras = ["sweets","fiddles","drinks"]
+extras = ["sides","sweets","fiddles","drinks"]

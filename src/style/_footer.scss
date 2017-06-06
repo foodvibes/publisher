@@ -1,16 +1,16 @@
 footer {
-  color: $positive-alt;
+  color: $ow;
   text-align: center;
   padding: 2vh;
   font-size: 12pt;
 
   &.fixed-cover {
-    background: rgba($negative, .85);
+    background: rgba($b, .85);
   }
 
   a, a:link, a:visited, a:active {
     text-decoration: none;
-    color: $positive-alt;
+    color: $ow;
   }
 
   p {
@@ -22,7 +22,7 @@ footer {
     color: rgba($w, .25);
 
     a, a:link, a:visited, a:active {
-      color: rgba($positive-alt, .25);
+      color: rgba($ow, .25);
     }
   }
 
@@ -39,7 +39,7 @@ footer {
       padding: 0;
 
       &:nth-child(1n+2) {
-        border-left: 1px solid rgba($positive, .1);
+        border-left: 1px solid rgba($w, .1);
       }
 
       a {

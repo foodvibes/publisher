@@ -7,7 +7,7 @@ article.homepage {
     background: $ow;
 
     &:nth-child(even) {
-      background: rgba($negative, .85);
+      background: rgba($b, .85);
       color: $ow;
 
       h2 {
@@ -21,7 +21,7 @@ article.homepage {
 
     section {
       max-width: 46rem;
-      padding: 4vh 2em;
+      padding: 2rem;
       margin: 0 auto;
 
       h2 {
@@ -34,22 +34,10 @@ article.homepage {
           white-space: nowrap;
         }
 
-        // &.booze-and-blade {
-        //   background: url(/media/foods.svg) no-repeat center top;
-        //   background-size: 4em;
-        //   padding: 3em 0 0 0;
-        // }
-
-        // &.book {
-        //   background: url(/media/book.svg) no-repeat center top;
-        //   background-size: 4em;
-        //   padding: 3em 0 0 0;
-        // }
-
         &.fork {
           background: url(/media/fork.svg) no-repeat center top;
-          background-size: 4em;
-          padding: 3em 0 0 0;
+          background-size: 12rem;
+          padding: 8rem 0 0 0;
         }
       }
 

@@ -448,7 +448,7 @@ html, body {
   font-weight: 500;
   font-size: 14pt;
   line-height: 1.6;
-  color: #575757;
+  color: #000000;
   background: black;
   min-width: 25vh;
   position: relative;
@@ -529,7 +529,7 @@ header {
       cursor: s-resize; }
 
 footer {
-  color: gainsboro;
+  color: #F5F5F5;
   text-align: center;
   padding: 2vh;
   font-size: 12pt; }
@@ -537,7 +537,7 @@ footer {
     background: rgba(0, 0, 0, 0.85); }
   footer a, footer a:link, footer a:visited, footer a:active {
     text-decoration: none;
-    color: gainsboro; }
+    color: #F5F5F5; }
   footer p {
     background: url(/media/kuokoa-white-25.png) no-repeat center top;
     background-size: 4em;
@@ -546,7 +546,7 @@ footer {
     padding: 5em 0 0;
     color: rgba(255, 255, 255, 0.25); }
     footer p a, footer p a:link, footer p a:visited, footer p a:active {
-      color: rgba(220, 220, 220, 0.25); }
+      color: rgba(245, 245, 245, 0.25); }
   footer menu {
     list-style: none;
     padding: 2vh 0;
@@ -589,7 +589,7 @@ article.homepage {
         color: #128FB2; }
     article.homepage > section section {
       max-width: 46rem;
-      padding: 4vh 2em;
+      padding: 2rem;
       margin: 0 auto; }
       article.homepage > section section h2 {
         font-size: 2.5rem;
@@ -600,8 +600,8 @@ article.homepage {
           white-space: nowrap; }
         article.homepage > section section h2.fork {
           background: url(/media/fork.svg) no-repeat center top;
-          background-size: 4em;
-          padding: 3em 0 0 0; }
+          background-size: 12rem;
+          padding: 8rem 0 0 0; }
       article.homepage > section section p {
         text-align: center;
         text-align-last: center; }
@@ -653,14 +653,14 @@ article.recipes {
         margin: 0;
         padding: 0; }
         article.recipes .categories .category ul li {
-          padding: 0; }
+          font-size: 1rem;
+          line-height: 1.75rem; }
 
 article.recipe p:first-child {
   margin: 0; }
 
 article.recipe section.image {
-  height: calc(100vh - 20rem);
-  min-height: 50vh;
+  height: calc(100vw / 1.61803);
   max-height: 70vh;
   width: 100%;
   overflow: hidden;
@@ -693,16 +693,17 @@ article.recipe .recipe-card {
     width: 30rem;
     display: block;
     text-align: justify;
-    color: #000000; }
+    color: #000000;
+    padding-bottom: 2rem; }
     article.recipe .recipe-card directions p:first-child {
       margin-top: 0; }
   article.recipe .recipe-card ingredients {
     display: block;
     width: 17rem;
-    font-size: 12pt;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
-    color: #575757; }
+    opacity: .5; }
     article.recipe .recipe-card ingredients ing {
       display: block; }
     article.recipe .recipe-card ingredients yield {
@@ -717,7 +718,8 @@ article.recipe .recipe-card {
     width: auto !important;
     font-size: 10pt !important;
     background: white;
-    color: black !important; }
+    color: black !important;
+    opacity: 1 !important; }
   img {
     display: none; }
   h2 {
