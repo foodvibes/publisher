@@ -2,10 +2,5 @@ baseURL = "http://foodvib.es/"
 languageCode = "en-US"
 title = "FOOD VIBES"
 googleAnalytics = "UA-99123656-4"
-
-[taxonomies]
-category = "categories"
-
-[params]
-meals = ["breakfast","lunch","dinner"]
-extras = ["sides","sweets","fiddles","drinks"]
+disableKinds = ["taxonomy", "taxonomyTerm"]
+disableHugoGeneratorInject = true

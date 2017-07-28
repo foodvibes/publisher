@@ -442,11 +442,10 @@ template {
 
 html, body {
   min-height: 100%;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: quasimoda, Helvetica, Arial, sans-serif;
   font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility;
-  font-weight: 500;
-  font-size: 14pt;
+  font-weight: 300;
   line-height: 1.6;
   color: #000000;
   background: black;
@@ -455,69 +454,94 @@ html, body {
   z-index: -2; }
 
 a {
-  color: #128FB2;
-  transition: color .5s ease; }
-  a:link {
-    color: #128FB2; }
-  a:visited, a.visited {
-    color: #0b576d; }
+  color: #000000;
+  transition: all .5s ease;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
   a:active, a:hover {
-    color: #17CFE5 !important; }
-  a.button {
-    font-family: "Lunchbox";
-    font-size: 1.8rem;
-    text-decoration: none;
-    display: inline-block;
-    margin: 1rem auto;
-    padding: .25rem 1.5rem;
-    border-radius: 1rem;
-    background: #128FB2;
-    color: #FFFFFF !important;
-    box-shadow: 0 0.25rem 0 rgba(0, 0, 0, 0.1);
-    transition: all .25s ease;
-    top: 0;
-    position: relative; }
-    a.button:hover {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
-      top: .25rem; }
+    color: #3d3d3d;
+    border-bottom-color: #000000; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #000000;
   font-family: "LunchBox", Helvetica, Arial, sans-serif;
-  text-transform: full-width;
+  text-transform: uppercase;
   font-kerning: normal;
   font-weight: 500; }
 
 h2 {
-  margin: 1em 0;
-  padding: 0;
-  font-size: 32pt;
-  line-height: 32pt; }
+  font-size: 3rem;
+  line-height: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
+
+a.button, input[type=submit] {
+  font-family: "Lunchbox";
+  font-size: xx-large;
+  line-height: 1em;
+  vertical-align: text-bottom;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 1rem auto;
+  padding: .25em .5em;
+  background: transparent;
+  color: #000000;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap; }
+  a.button:before, a.button:after, input[type=submit]:before, input[type=submit]:after {
+    opacity: .25;
+    transition: all .5s ease; }
+  a.button:before, input[type=submit]:before {
+    content: '» '; }
+  a.button:after, input[type=submit]:after {
+    content: ' «'; }
+  a.button:hover:before, a.button:hover:after, input[type=submit]:hover:before, input[type=submit]:hover:after {
+    opacity: 1; }
 
 article {
   background: #FFFFFF; }
+  article#fourohfour {
+    text-align: center; }
+    article#fourohfour h1 {
+      font-size: 8rem;
+      margin: 0;
+      line-height: 12rem; }
+    article#fourohfour section {
+      padding: 2rem 2rem 6rem; }
+  article#subscribe section {
+    background: #F5F5F5;
+    padding: 2rem 2rem 6rem;
+    text-align: center; }
+    article#subscribe section #mc_embed_signup {
+      margin-top: 2rem; }
+    article#subscribe section input[type="email"] {
+      padding: .5rem;
+      border-radius: 0;
+      border: 1px solid rgba(61, 61, 61, 0.15);
+      font-family: quasimoda, Helvetica, Arial, sans-serif;
+      outline: none; }
+    article#subscribe section input[type="submit"] {
+      border-radius: 0;
+      font-size: xx-large; }
 
 header {
   background: #FFFFFF;
   position: relative;
   width: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: row;
-  align-content: center;
   align-items: center;
   height: 8rem; }
   header a {
     display: block;
     width: 100%;
-    min-height: 60%;
-    margin: 20%;
-    padding: 0;
-    overflow: hidden;
-    background: transparent url(/media/food-vibes-s-b.svg) no-repeat center center;
+    height: 60%;
+    background: transparent url(/media/food-vibes-black.svg) no-repeat center center;
     background-size: contain;
-    transition: background-color .5s ease; }
+    transition: background-color .5s ease;
+    border: none; }
     header a h1 {
       display: none; }
   header.home {
@@ -525,25 +549,27 @@ header {
     position: fixed;
     z-index: 10000; }
     header.home a {
-      background-image: url(/media/food-vibes-s.svg);
+      margin: 10%;
+      background-image: url(/media/food-vibes-white.svg);
       cursor: s-resize; }
 
 footer {
   color: #F5F5F5;
   text-align: center;
   padding: 2vh;
-  font-size: 12pt; }
+  font-size: small; }
   footer.fixed-cover {
     background: rgba(0, 0, 0, 0.85); }
-  footer a, footer a:link, footer a:visited, footer a:active {
-    text-decoration: none;
+  footer a {
     color: #F5F5F5; }
+    footer a:hover {
+      color: #FFFFFF; }
   footer p {
-    background: url(/media/kuokoa-white-25.png) no-repeat center top;
+    background: url(/media/kuokoa.png) no-repeat center top;
     background-size: 4em;
-    font-size: 8pt;
+    font-size: x-small;
     margin: 2vh 0;
-    padding: 5em 0 0;
+    padding: 3rem 0 0;
     color: rgba(255, 255, 255, 0.25); }
     footer p a, footer p a:link, footer p a:visited, footer p a:active {
       color: rgba(245, 245, 245, 0.25); }
@@ -557,15 +583,16 @@ footer {
     footer menu li {
       display: block;
       padding: 0; }
-      footer menu li:nth-child(1n+2) {
-        border-left: 1px solid rgba(255, 255, 255, 0.1); }
       footer menu li a {
         display: block;
-        padding: 0 1em; }
+        padding: 0 1rem; }
+    footer menu.subscribe {
+      padding: 0; }
 
 article.homepage {
+  padding-top: 100vh;
   background: transparent;
-  padding-top: 100vh; }
+  text-align: center; }
   article.homepage .after {
     position: fixed;
     /* stretch a fixed position to the whole screen */
@@ -576,7 +603,7 @@ article.homepage {
     right: 0;
     z-index: -1;
     /* needed to keep in the background */
-    background: url(/media/C5E00AD9-164F-437F-ADB4-E0249F75621B.jpg) center center;
+    background: url(/media/background.jpg) center center;
     background-size: cover; }
   article.homepage > section {
     background: #F5F5F5; }
@@ -586,14 +613,22 @@ article.homepage {
       article.homepage > section:nth-child(even) h2 {
         color: #FFFFFF; }
       article.homepage > section:nth-child(even) a {
-        color: #128FB2; }
+        color: #F5F5F5;
+        border-bottom-color: rgba(255, 255, 255, 0.25); }
+        article.homepage > section:nth-child(even) a:hover {
+          color: #FFFFFF;
+          border-bottom-color: #FFFFFF; }
+        article.homepage > section:nth-child(even) a.button {
+          color: #FFFFFF;
+          border-color: #FFFFFF; }
     article.homepage > section section {
       max-width: 46rem;
-      padding: 2rem;
-      margin: 0 auto; }
+      padding: 3rem 1rem;
+      margin: 0 auto;
+      font-size: large;
+      font-weight: 300; }
       article.homepage > section section h2 {
-        font-size: 2.5rem;
-        line-height: 2.5rem;
+        margin: 2rem 0;
         text-align: center;
         text-transform: uppercase; }
         article.homepage > section section h2 span {
@@ -602,59 +637,34 @@ article.homepage {
           background: url(/media/fork.svg) no-repeat center top;
           background-size: 12rem;
           padding: 8rem 0 0 0; }
-      article.homepage > section section p {
-        text-align: center;
-        text-align-last: center; }
 
 article.recipes {
-  background: transparent; }
-  article.recipes .after {
-    position: fixed;
-    /* stretch a fixed position to the whole screen */
-    top: -20%;
-    height: 120%;
-    /* fix for mobile browser address bar appearing disappearing */
-    left: 0;
-    right: 0;
-    z-index: -1;
-    /* needed to keep in the background */
-    background: url(/media/C5E00AD9-164F-437F-ADB4-E0249F75621B.jpg) center center;
-    background-size: cover; }
-  article.recipes a {
-    text-decoration: none; }
-  article.recipes h1 {
-    margin: 0;
-    padding: 2rem 0;
-    line-height: 3rem;
-    font-size: 2.5rem;
-    text-align: center;
-    text-transform: uppercase;
-    background: rgba(0, 0, 0, 0.85);
-    color: #FFFFFF; }
+  min-width: 14rem;
+  background: #F5F5F5; }
   article.recipes .categories {
-    background: #FFFFFF;
-    min-width: 14rem;
+    max-width: 48rem;
     margin: 0 auto;
-    padding: 1rem 0 10vh 0;
+    padding: 4rem 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center; }
     article.recipes .categories .category {
-      width: 10rem;
+      width: 12rem;
       padding: 0 2rem 2rem;
       text-align: center; }
       article.recipes .categories .category h2 {
-        margin: 0;
-        font-size: 2rem;
-        text-transform: uppercase; }
+        margin-bottom: .5rem; }
       article.recipes .categories .category ul {
         list-style: none;
         margin: 0;
         padding: 0; }
         article.recipes .categories .category ul li {
-          font-size: 1rem;
-          line-height: 1.75rem; }
+          font-size: large;
+          line-height: 1.8em; }
+          article.recipes .categories .category ul li a {
+            color: #000000;
+            border: none; }
 
 article.recipe p:first-child {
   margin: 0; }
@@ -679,11 +689,12 @@ article.recipe .recipe-card {
   flex-direction: wrap;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 2rem 10vh; }
+  padding: 0 2rem 4rem;
+  font-size: large;
+  font-weight: 300; }
   article.recipe .recipe-card h2 {
     width: 30rem;
-    margin: 2rem 0;
-    font-size: 2.2rem;
+    margin: 4rem 0 2rem;
     line-height: 3rem; }
     article.recipe .recipe-card h2 span {
       height: 1.5rem;
@@ -700,7 +711,7 @@ article.recipe .recipe-card {
   article.recipe .recipe-card ingredients {
     display: block;
     width: 17rem;
-    font-size: 1rem;
+    font-size: small;
     display: flex;
     flex-direction: column;
     opacity: .5; }
@@ -708,15 +719,14 @@ article.recipe .recipe-card {
       display: block; }
     article.recipe .recipe-card ingredients yield {
       display: block;
-      margin-top: 1rem; }
+      margin-top: 2rem; }
 
 @media print {
   header, footer {
     display: none !important; }
   html, body, * {
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif !important;
     width: auto !important;
-    font-size: 10pt !important;
+    font-size: 8pt !important;
     background: white;
     color: black !important;
     opacity: 1 !important; }

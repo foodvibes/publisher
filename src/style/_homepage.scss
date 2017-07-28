@@ -1,7 +1,19 @@
 article.homepage {
-  @include fixed-cover;
-
   padding-top: 100vh;
+  background: transparent;
+  text-align: center;
+
+  .after {
+    position: fixed; /* stretch a fixed position to the whole screen */
+    top: -20%;
+    height: 120%; /* fix for mobile browser address bar appearing disappearing */
+    left: 0;
+    right: 0;
+    z-index: -1; /* needed to keep in the background */
+    background: url(/media/background.jpg) center center;
+    background-size: cover;
+    // opacity: .9;
+  }
 
   & > section {
     background: $ow;
@@ -15,18 +27,30 @@ article.homepage {
       }
 
       a {
-        color: $links;
+        color: $ow;
+        border-bottom-color: rgba($w, .25);
+
+        &:hover {
+          color: $w;
+          border-bottom-color: $w;
+        }
+
+        &.button {
+          color: $w;
+          border-color: $w;
+        }
       }
     }
 
     section {
       max-width: 46rem;
-      padding: 2rem;
+      padding: 3rem 1rem;
       margin: 0 auto;
+      font-size: large;
+      font-weight: 300;
 
       h2 {
-        font-size: 2.5rem;
-        line-height: 2.5rem;
+        margin: 2rem 0;
         text-align: center;
         text-transform: uppercase;
 
@@ -39,11 +63,6 @@ article.homepage {
           background-size: 12rem;
           padding: 8rem 0 0 0;
         }
-      }
-
-      p {
-        text-align: center;
-        text-align-last: center;
       }
     }
   }

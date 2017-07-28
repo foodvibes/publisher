@@ -1,15 +1,25 @@
 @import "../../lib/normalize-scss/sass/normalize/import-now";
-@import "variables";
+
+$w:             #FFFFFF;
+$ow:            #F5F5F5;
+
+$b:             #000000;
+$ob:            #3d3d3d;
+
+$links:         $b;
+$links-active:  $ob;
+
+$gr: 1.6180339887498948482;
+
 @import "typography";
-@import "mixins";
 
 html, body {
   min-height: 100%;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: quasimoda, Helvetica, Arial, sans-serif;
   font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility;
-  font-weight: 500;
-  font-size: 14pt;
+  font-weight: 300;
+  // font-size: 16px;
   line-height: 1.6;
   color: $b;
   background: black;
@@ -20,58 +30,110 @@ html, body {
 
 a {
   color: $links;
-  transition: color .5s ease;
-  &:link {
-    color: $links;
-  }
-
-  &:visited, &.visited {
-    color: darken($links, 15%);
-  }
+  transition: all .5s ease;
+  text-decoration: none;
+  border-bottom: 1px solid rgba($links, .25);
 
   &:active, &:hover {
-    color: $links-active !important;
-  }
-
-  &.button {
-    font-family: "Lunchbox";
-    font-size: 1.8rem;
-    text-decoration: none;
-    display: inline-block;
-    margin: 1rem auto;
-    padding: .25rem 1.5rem;
-    border-radius: 1rem;
-    background: $links;
-    color: $w !important;
-    box-shadow: 0 .25rem 0 rgba(0,0,0,.1);
-    transition: all .25s ease;
-    top: 0;
-
-    position: relative;
-    &:hover {
-      box-shadow: 0 0 0 rgba(0,0,0,.1);
-      top: .25rem;
-    }
+    color: $links-active;
+    border-bottom-color: $links;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $b;
   font-family: "LunchBox", Helvetica, Arial, sans-serif;
-  text-transform: full-width;
+  text-transform: uppercase;
   font-kerning: normal;
   font-weight: 500;
 }
 
 h2 {
-  margin: 1em 0;
-  padding: 0;
-  font-size: 32pt;
-  line-height: 32pt;
+  font-size:      3rem;
+  line-height:    3rem;
+  margin-top:     2rem;
+  margin-bottom:  1rem;
+}
+
+// h1 {
+//   font-size: 3rem;
+//   line-height: 3rem;
+// }
+
+a.button, input[type=submit] {
+  font-family: "Lunchbox";
+  font-size: xx-large;
+  line-height: 1em;
+  vertical-align: text-bottom;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 1rem auto;
+  padding: .25em .5em;
+  background: transparent;
+  color: $b;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+
+  &:before, &:after {
+    opacity: .25;
+    transition: all .5s ease;
+  }
+  &:before {
+    content: '» ';
+  }
+  &:after {
+    content: ' «';
+  }
+  &:hover {
+    &:before, &:after {
+      opacity: 1;
+    }
+  }
 }
 
 article {
   background: $w;
+
+  &#fourohfour {
+    text-align: center;
+
+    h1 {
+      font-size: 8rem;
+      margin: 0;
+      line-height: 12rem;
+    }
+
+    section {
+      padding: 2rem 2rem 6rem;
+    }
+  }
+
+  &#subscribe {
+    section {
+      background: $ow;
+      padding: 2rem 2rem 6rem;
+      text-align: center;
+
+      #mc_embed_signup {
+        margin-top: 2rem;
+      }
+
+      input[type="email"] {
+        padding: .5rem;
+        border-radius: 0;
+        border: 1px solid rgba($ob, .15);
+        font-family: quasimoda, Helvetica, Arial, sans-serif;
+        outline: none;
+      }
+
+      input[type="submit"] {
+        border-radius: 0;
+        font-size: xx-large;
+      }
+    }
+  }
 }
 
 @import "header";

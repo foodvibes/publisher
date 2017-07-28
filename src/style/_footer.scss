@@ -2,23 +2,25 @@ footer {
   color: $ow;
   text-align: center;
   padding: 2vh;
-  font-size: 12pt;
+  font-size: small;
 
   &.fixed-cover {
     background: rgba($b, .85);
   }
 
-  a, a:link, a:visited, a:active {
-    text-decoration: none;
+  a {
     color: $ow;
+    &:hover {
+      color: $w;
+    }
   }
 
   p {
-    background: url(/media/kuokoa-white-25.png) no-repeat center top;
+    background: url(/media/kuokoa.png) no-repeat center top;
     background-size: 4em;
-    font-size: 8pt;
+    font-size: x-small;
     margin: 2vh 0;
-    padding: 5em 0 0;
+    padding: 3rem 0 0;
     color: rgba($w, .25);
 
     a, a:link, a:visited, a:active {
@@ -38,14 +40,14 @@ footer {
       display: block;
       padding: 0;
 
-      &:nth-child(1n+2) {
-        border-left: 1px solid rgba($w, .1);
-      }
-
       a {
         display: block;
-        padding: 0 1em;
+        padding: 0 1rem;
       }
+    }
+
+    &.subscribe {
+      padding: 0;
     }
   }
 }

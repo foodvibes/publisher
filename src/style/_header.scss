@@ -2,24 +2,19 @@ header {
   background: $w;
   position: relative;
   width: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: row;
-  align-content: center;
   align-items: center;
   height: 8rem;
 
   a {
       display: block;
       width: 100%;
-      min-height: 60%;
-      margin: 20%;
-      padding: 0;
-      overflow: hidden;
-      background: transparent url(/media/food-vibes-s-b.svg) no-repeat center center;
+      height: 60%;
+      background: transparent url(/media/food-vibes-black.svg) no-repeat center center;
       background-size: contain;
       transition: background-color .5s ease;
+      border: none;
 
       h1 {
         display: none;
@@ -32,7 +27,8 @@ header {
     z-index: 10000;
 
     a {
-      background-image: url(/media/food-vibes-s.svg);
+      margin: 10%;
+      background-image: url(/media/food-vibes-white.svg);
       cursor: s-resize;
     }
   }

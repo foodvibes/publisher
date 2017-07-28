@@ -9,8 +9,7 @@
   <section>
     <section>
       <h2><span>Good Food</span> &amp; <span>Strong Drink</span></h2>
-      <p><a href="http://foodvib.es">foodvib.es</a> is a refreshingly terse catalogue of simple, familiar recipes. Many were originally shared by someone only to be lost in time and translation; others found in literature only to be unapologetically butchered beyond recognition. It always begins with good intentions and genuine inspiration.</p>
-      <p>What you will find here are the eventual serendipitous discoveries born of poor memory, tidal laziness, limited resources and gastrally induced desperation paired with a palate tolerable of failure and relentless will to cook.</p>
+      <p><a href="http://foodvib.es">foodvib.es</a> is a refreshingly terse catalogue of simple, home-style recipes. Many were inherited. Some, observed. Others, shared by someone only to be lost in time and translation. It always began with good intentions and genuine inspiration. What you will find here are the eventual, serendipitous discoveries born of poor memory, tidal laziness, limited resources and gastrally induced desperation paired with a palate tolerable of failure and relentless will to cook.</p>
       <p><a class="button" href="/recipes">MAKE THE RECIPES</a></p>
     </section>
   </section>
@@ -18,14 +17,14 @@
     <section>
       <h2><span>West Coast</span> + <span>Island Style</span> Cookbook</h2>
       <p>The <a href="https://kuokoa.life/products/food-vibes">book</a> is a beautiful physical manifestation of the <a href="/recipes">recipes</a> shared here. A mashup of fresh flavors and casual culinary style native to west coast and island lifestyles. Everything contained has been crafted between California and Hawaiʻi over the last decade. Each recipe inspired by spontaneous happenings, ritual gatherings, casual  dining, backyard barbecues, bonfires at the beach and campfires under the stars with friends, family and amicable strangers.</p>
-      <p><a class="button" href="https://kuokoa.life/products/food-vibes">GET THE BOOK</a></p>
+      <p><a class="button" href="https://kuokoa.life/products/food-vibes">Get the Book</a></p>
     </section>
   </section>
   <section>
     <section>
       <h2 class="fork">Fork This</h2>
       <p>The digital accoutrements created for the book and site have been designed and developed in the open with the aim to enable other creators to learn from, utilize and even expand upon. All <a href="https://github.com/foodvibes/recipes">recipes</a> in their original plaintext form, the <a href="https://github.com/foodvibes/transcoder">transcoder</a> that encodes those recipes into a more sophisticated markup and the <a href="https://github.com/foodvibes/publisher">publisher</a> that consumes that markup and generates this website are all freely available.</p>
-      <p><a class="button" href="https://github.com/foodvibes">HACK THE CODE</a></p>
+      <p><a class="button" href="https://github.com/foodvibes">Hack the Code</a></p>
     </section>
   </section>
   <aside class="after"></aside>
@@ -36,15 +35,15 @@
     <li><a href="/recipes">Recipes</a></li>
     <li><a href="https://kuokoa.life/products/food-vibes">Book</a></li>
     <li><a href="https://github.com/foodvibes">Code</a></li>
+    <li><a href="/subscribe">News</a></li>
   </menu>
   {{ partial "copyright" . }}
 </footer>
 
 <script>
 var backgroundSizeRatio = .6,
-    minimumHeaderHeight = '4rem',
+    minimumHeaderHeight = '6rem',
     minimum, header, link;
-
 
 function calculateMinimumHeight() {
   var tmp = document.createElement('div');
@@ -67,12 +66,12 @@ function animateHeader() {
   if (delta <= minimum) {
     header.style.height = minimum + 'px';
     header.style.backgroundColor = 'rgba(255,255,255,1)';
-    link.style.backgroundImage = 'url(/media/food-vibes-s-b.svg)';
+    link.style.backgroundImage = 'url(/media/food-vibes-black.svg)';
   } else {
     //console.log(height - position);
     header.style.height = delta + 'px';
     header.style.backgroundColor = 'rgba(255,255,255,0)';
-    link.style.backgroundImage = 'url(/media/food-vibes.svg)';
+    link.style.backgroundImage = 'url(/media/food-vibes-white.svg)';
   }
 }
 

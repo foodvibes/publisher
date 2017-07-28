@@ -5,6 +5,7 @@
 </header>
 
 <meta property="og:site_name" content="foodvib.es" />
+
 <article class="recipe h-recipe" itemscope itemtype="http://schema.org/Recipe">
 
   <section class="image" style="background-image:url(/media/recipes/{{ index .Params.Categories 0 }}/{{ .Params.Slug }}.jpg);">
@@ -13,10 +14,20 @@
 
   <section class="recipe-card">
     <meta itemprop="url" content="{{ .Permalink }}" />
-    <h2 class="p-name" itemprop="name">{{ .Title }} <a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/" data-pin-tall="true"></a></h2>
+    <h2 class="p-name" itemprop="name">{{ .Title }}</h2>
     {{ chomp .Content }}
   </section>
 </article>
+
+<script src="/logic/nosleep.js"></script>
+<script>
+var noSleep = new NoSleep();
+function enableNoSleep() {
+  noSleep.enable();
+  document.removeEventListener('touchstart', enableNoSleep, false);
+}
+document.addEventListener('touchstart', enableNoSleep, false);
+</script>
 
 <footer>
   <menu class="sitemap">
@@ -24,14 +35,9 @@
     <li><a href="/recipes">Recipes</a></li>
     <li><a href="https://kuokoa.life/products/food-vibes">Book</a></li>
     <li><a href="https://github.com/foodvibes">Code</a></li>
+    <li><a href="/subscribe">News</a></li>
   </menu>
   {{ partial "copyright" . }}
 </footer>
-
-<script
-    type="text/javascript"
-    async defer
-    src="//assets.pinterest.com/js/pinit.js"
-></script>
 
 {{ partial "foot" . }}

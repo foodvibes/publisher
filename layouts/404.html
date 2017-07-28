@@ -4,20 +4,21 @@
   <a href="/"><h1>Food Vibes</h1></a>
 </header>
 
-<article class="recipes">
-
-  <section class="categories">{{ range (slice "breakfast" "lunch" "dinner" "sides" "sweets" "fiddles" "drinks") }}
-      {{ partial "categorical_recipe_list" (dict "context" $.Site.Taxonomies.categories "category" . ) }}
-  {{ end }}</section>
-
+<article id="fourohfour">
+  <section>
+    <h1>&raquo; ? &laquo;</h1>
+    <p>That page doesn't seem to exist. <a href="/">Return home?</a></p>
+  </section>
 </article>
 
 <footer class="fixed-cover">
   <menu class="sitemap">
-    <li><a href="/">Home</a></li>
+    <li><a href="/recipes">Recipes</a></li>
     <li><a href="https://kuokoa.life/products/food-vibes">Book</a></li>
     <li><a href="https://github.com/foodvibes">Code</a></li>
-    <li><a href="/subscribe">News</a></li>
+  </menu>
+  <menu class="subscribe">
+    <li><a href="/subscribe">Subscribe</a></li>
   </menu>
   {{ partial "copyright" . }}
 </footer>

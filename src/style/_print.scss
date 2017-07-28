@@ -3,9 +3,9 @@
     display: none !important;
   }
   html, body, * {
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif !important;
+    // font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif !important;
     width: auto !important;
-    font-size: 10pt !important;
+    font-size: 8pt !important;
     background: white;
     color: black !important;
     opacity: 1 !important;
@@ -22,7 +22,6 @@
       display: none !important;
     }
   }
-
 
   section.image {
     // display: none;
@@ -46,9 +45,5 @@
         font-weight: bold;
       }
     }
-    yield {
-      // display: none !important;
-    }
   }
-
 }
