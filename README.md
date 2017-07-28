@@ -1,4 +1,4 @@
-# Recipe Blog Generator
+# Food Vibes Publisher
 
 A static site generator for [foodvib.es](http://foodvib.es).
 
