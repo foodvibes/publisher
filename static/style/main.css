@@ -477,7 +477,7 @@ h2 {
 
 a.button, input[type=submit] {
   font-family: "Lunchbox";
-  font-size: xx-large;
+  font-size: 2.4rem;
   line-height: 1em;
   vertical-align: text-bottom;
   text-transform: uppercase;
@@ -491,14 +491,16 @@ a.button, input[type=submit] {
   border: none;
   white-space: nowrap; }
   a.button:before, a.button:after, input[type=submit]:before, input[type=submit]:after {
-    opacity: .25;
-    transition: all .5s ease; }
+    color: rgba(0, 0, 0, 0.25);
+    transition: color .5s ease; }
   a.button:before, input[type=submit]:before {
     content: '» '; }
   a.button:after, input[type=submit]:after {
     content: ' «'; }
-  a.button:hover:before, a.button:hover:after, input[type=submit]:hover:before, input[type=submit]:hover:after {
-    opacity: 1; }
+  a.button:hover, input[type=submit]:hover {
+    color: black; }
+    a.button:hover:before, a.button:hover:after, input[type=submit]:hover:before, input[type=submit]:hover:after {
+      color: rgba(0, 0, 0, 0.75); }
 
 article {
   background: #FFFFFF; }
@@ -546,8 +548,8 @@ header {
       display: none; }
   header.home {
     background: transparent;
-    position: fixed;
-    z-index: 10000; }
+    z-index: 10000;
+    height: 100vh; }
     header.home a {
       margin: 10%;
       background-image: url(/media/food-vibes-white.svg);
@@ -589,8 +591,10 @@ footer {
     footer menu.subscribe {
       padding: 0; }
 
+.initialized article.homepage {
+  padding-top: 100vh; }
+
 article.homepage {
-  padding-top: 100vh;
   background: transparent;
   text-align: center; }
   article.homepage .after {
@@ -607,11 +611,13 @@ article.homepage {
     background-size: cover; }
   article.homepage > section {
     background: #F5F5F5; }
+    article.homepage > section h2 {
+      color: rgba(0, 0, 0, 0.65); }
     article.homepage > section:nth-child(even) {
       background: rgba(0, 0, 0, 0.85);
       color: #F5F5F5; }
       article.homepage > section:nth-child(even) h2 {
-        color: #FFFFFF; }
+        color: rgba(255, 255, 255, 0.65); }
       article.homepage > section:nth-child(even) a {
         color: #F5F5F5;
         border-bottom-color: rgba(255, 255, 255, 0.25); }
@@ -619,8 +625,14 @@ article.homepage {
           color: #FFFFFF;
           border-bottom-color: #FFFFFF; }
         article.homepage > section:nth-child(even) a.button {
-          color: #FFFFFF;
+          color: 1;
           border-color: #FFFFFF; }
+          article.homepage > section:nth-child(even) a.button:before, article.homepage > section:nth-child(even) a.button:after {
+            color: rgba(255, 255, 255, 0.25); }
+          article.homepage > section:nth-child(even) a.button:hover {
+            color: white; }
+            article.homepage > section:nth-child(even) a.button:hover:before, article.homepage > section:nth-child(even) a.button:hover:after {
+              color: rgba(255, 255, 255, 0.75); }
     article.homepage > section section {
       max-width: 46rem;
       padding: 3rem 1rem;
@@ -636,7 +648,9 @@ article.homepage {
         article.homepage > section section h2.fork {
           background: url(/media/fork.svg) no-repeat center top;
           background-size: 12rem;
-          padding: 8rem 0 0 0; }
+          padding: 6rem 0 0 0;
+          height: 0;
+          overflow: hidden; }
 
 article.recipes {
   min-width: 14rem;

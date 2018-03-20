@@ -4,3 +4,6 @@ title = "FOOD VIBES"
 googleAnalytics = "UA-99123656-4"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 disableHugoGeneratorInject = true
+
+[params]
+  description = "Food Vibes: Cooking Recipes for West Coast and Island lifestyles. Casual, inspired California and Hawaiian cuisine. Good food. Strong drink."

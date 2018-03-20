@@ -1,5 +1,8 @@
-article.homepage {
+.initialized article.homepage {
   padding-top: 100vh;
+}
+
+article.homepage {
   background: transparent;
   text-align: center;
 
@@ -18,12 +21,16 @@ article.homepage {
   & > section {
     background: $ow;
 
+    h2 {
+      color: rgba($b, .65);
+    }
+
     &:nth-child(even) {
       background: rgba($b, .85);
       color: $ow;
 
       h2 {
-        color: $w;
+        color: rgba($w, .65);
       }
 
       a {
@@ -36,8 +43,20 @@ article.homepage {
         }
 
         &.button {
-          color: $w;
+          color: 1;
           border-color: $w;
+
+          &:before, &:after {
+            color: rgba($w, .25);
+          }
+
+          &:hover {
+            color: rgba($w, 1);
+
+            &:before, &:after {
+              color: rgba($w, .75);
+            }
+          }
         }
       }
     }
@@ -61,7 +80,9 @@ article.homepage {
         &.fork {
           background: url(/media/fork.svg) no-repeat center top;
           background-size: 12rem;
-          padding: 8rem 0 0 0;
+          padding: 6rem 0 0 0;
+          height: 0;
+          overflow: hidden;
         }
       }
     }

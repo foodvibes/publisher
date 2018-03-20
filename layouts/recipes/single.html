@@ -14,20 +14,10 @@
 
   <section class="recipe-card">
     <meta itemprop="url" content="{{ .Permalink }}" />
-    <h2 class="p-name" itemprop="name">{{ .Title }}</h2>
+    <h2 class="p-name" itemprop="name">{{ .LinkTitle }}</h2>
     {{ chomp .Content }}
   </section>
 </article>
-
-<script src="/logic/nosleep.js"></script>
-<script>
-var noSleep = new NoSleep();
-function enableNoSleep() {
-  noSleep.enable();
-  document.removeEventListener('touchstart', enableNoSleep, false);
-}
-document.addEventListener('touchstart', enableNoSleep, false);
-</script>
 
 <footer>
   <menu class="sitemap">

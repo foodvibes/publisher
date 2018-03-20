@@ -1,6 +1,6 @@
 <section class="category {{ .category }}">
   <h2>{{ .category }}</h2>
   <ul>{{ range $key, $category := .context }}{{ if eq $key $.category }}{{ range $category.Pages }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+    <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}
   {{ end }}{{ end }}</ul>
 </section>
