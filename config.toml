@@ -1,9 +1,8 @@
-baseURL = "http://foodvib.es/"
+baseURL = "https://foodvib.es/"
 languageCode = "en-US"
-title = "FOOD VIBES"
-googleAnalytics = "UA-99123656-4"
+title = "Food Vibes - Cookbook and Recipes at foodvib.es"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 disableHugoGeneratorInject = true
 
 [params]
-  description = "Food Vibes: Cooking Recipes for West Coast and Island lifestyles. Casual, inspired California and Hawaiian cuisine. Good food. Strong drink."
+  description = "Food Vibes: Cookbook and Recipes for West Coast and Island lifestyles. Casual California and Hawaiian inspired cuisine. Good food. Strong drink."

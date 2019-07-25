@@ -1,5 +1,2 @@
 User-agent: *
-Disallow: /media/
-Disallow: /logic/
-Disallow: /style/
 Sitemap: http://foodvib.es/sitemap.xml
