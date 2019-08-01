@@ -1,6 +1,6 @@
-.PHONY: compile css install
+.PHONY: compile css install content
 
-compile: install css
+compile: install css content
 	hugo
 
 css:
@@ -8,3 +8,7 @@ css:
 
 install:
 	git submodule update --init --recursive
+
+content:
+	./transcode.sh
+
